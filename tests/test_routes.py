@@ -25,6 +25,7 @@ HTTPS_ENVIRON = {'wsgi.url_scheme': 'https'}
 #  T E S T   C A S E S
 ######################################################################
 
+
 class TestAccountService(TestCase):
     """Account Service Tests"""
 
@@ -52,7 +53,6 @@ class TestAccountService(TestCase):
     def tearDown(self):
         """Runs once after each test case"""
         db.session.remove()
-
 
     ######################################################################
     #  H E L P E R   M E T H O D S
