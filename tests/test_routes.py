@@ -24,6 +24,7 @@ HTTPS_ENVIRON = {'wsgi.url_scheme': 'https'}
 ######################################################################
 #  T E S T   C A S E S
 ######################################################################
+
 class TestAccountService(TestCase):
     """Account Service Tests"""
 
@@ -51,6 +52,7 @@ class TestAccountService(TestCase):
     def tearDown(self):
         """Runs once after each test case"""
         db.session.remove()
+
 
     ######################################################################
     #  H E L P E R   M E T H O D S
@@ -139,7 +141,7 @@ class TestAccountService(TestCase):
         """It should not Read an Account that is not found"""
         resp = self.client.get(f"{BASE_URL}/0")
         self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
-    
+
     def test_get_account_list(self):
         """It should Get a list of Accounts"""
         self._create_accounts(5)
